@@ -1,0 +1,11 @@
+[package]
+name = "reversi-agent"
+version = "1.0.0"
+authors = ["Yunhao Qian"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.81"

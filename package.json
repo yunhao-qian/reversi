@@ -1,0 +1,25 @@
+{
+  "name": "reversi",
+  "version": "1.0.0",
+  "description": "Play reversi against another human or a CPU player",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/yunhao-qian/reversi"
+  },
+  "author": "Yunhao Qian",
+  "license": "MIT",
+  "devDependencies": {
+    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  }
+}

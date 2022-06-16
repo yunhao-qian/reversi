@@ -1,24 +1,9 @@
 # Reversi
 
-This repository contains an implementation of the game Reversi (a.k.a. Othello), and a game-playing agent using the minmax algorithm with alpha-beta pruning. The entire code is written in a single file `index.html`, so you can simply download it, click it open, and play.
+This project implements the Reversi game. It also includes a game-playing agent using the minmax algorithm. Users are able to play against either another human or a game-playing agent (a.k.a., CPU).
 
 ## Features
 
-* Playing with another human
-* Playing with a game-playing agent
-* Undo moves made by human players
-* End a game early and start a new game
+For each of the Black (first) and White (second) players, users can pick whether it will be a human or a game-playing agent. Thus, all the four combinations are possible: human versus human, human versus CPU, CPU versus human, and CPU versus CPU (although the last combination is not very useful). The entire game history is recorded, so moves made by human players may be undone by an unlimited number of times, while moves made by CPUs cannot be undone. Users can also stop in the middle of a game and start a new game.
 
-## Acknowledgement
-
-The heuristic function used by the minmax algorithm is based on the paper *[An Analysis of Heuristics in Othello](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf)*. The software is open-sourced under the MIT license.
-
-## Screenshots
-
-Start of a human-human game:
-
-![Start of a human-human game](images/game_start.png)
-
-An ongoing agent-human game:
-
-![An ongoing agent-human game](images/game_ongoing.png)
+The game-playing agent is empowered by the minmax algorithm with alpha-beta pruning. The heuristic function is based on the paper [An Analysis of Heuristics in Othello](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf). The main code of this agent is written in Rust and compiled into WebAssembly, resulting in faster response of CPU players and smaller memory footprints compared to a JavaScript implementation.
