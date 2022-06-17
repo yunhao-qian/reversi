@@ -1,0 +1,106 @@
+body {
+  background-color: darkslategray;
+}
+
+.control-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+  column-gap: 30px;
+}
+
+.button-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.select-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+  column-gap: 20px;
+}
+
+.select-sub-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.select-sub-container label {
+  color: white;
+}
+
+.chessboard-container {
+  max-width: 90vmin;
+  max-height: 90vmin;
+  aspect-ratio: 1;
+  margin: 15px auto 0px auto;
+  padding: 0px;
+}
+
+#chessboard-table {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 4px solid black;
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 0px 8px black;
+}
+
+#chessboard-table tr {
+  width: 100%;
+  height: 12.5%;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#chessboard-table td {
+  box-sizing: border-box;
+  width: 12.5%;
+  height: 12.5%;
+  border: 2px solid black;
+  margin: 0px;
+  padding: 0px;
+  background-color: mediumseagreen;
+}
+
+.disc {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  margin: auto;
+  padding: 0px;
+  box-shadow: 0px 0px 4px black;
+  transition-property: width, height, opacity, background-color, box-shadow;
+  transition-duration: 0.8s;
+}
+
+.disc.first {
+  background-color: black;
+}
+
+.disc.second {
+  background-color: white;
+}
+
+.disc.candidate {
+  width: 40%;
+  height: 40%;
+  opacity: 50%;
+  box-shadow: none;
+}
+
+.disc.invisible {
+  opacity: 0;
+}

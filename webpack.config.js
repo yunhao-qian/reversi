@@ -7,15 +7,15 @@ module.exports = {
   experiments: {
     asyncWebAssembly: true,
   },
-  mode: 'production',
+  mode: 'development',
   module: {
     rules: [
       {
-        test: /.css/i,
+        test: /\.css/i,
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /.ts/i,
+        test: /\.ts/i,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
