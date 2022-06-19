@@ -262,7 +262,7 @@ class Game {
   async run(): Promise<void> {
     await Promise.race([updateChessboardTable(this.state), this.waitForEndOrUndoClick()]);
     if (this.endFlag) {
-      this.end();
+      await this.end();
       return;
     }
 
@@ -282,7 +282,7 @@ class Game {
         const player = this.state.player === Disc.First ? this.firstPlayer : this.secondPlayer;
         const move = await Promise.race([player.play(this.state), this.waitForEndOrUndoClick()]);
         if (this.endFlag) {
-          this.end();
+          await this.end();
           return;
         }
         if (this.undoFlag) {
@@ -304,7 +304,7 @@ class Game {
 
       await Promise.race([updateChessboardTable(this.state), this.waitForEndOrUndoClick()]);
       if (this.endFlag) {
-        this.end();
+        await this.end();
         return;
       }
       if (this.undoFlag) {
@@ -333,7 +333,7 @@ class Game {
     while (true) {
       await this.waitForEndOrUndoClick();
       if (this.endFlag) {
-        this.end();
+        await this.end();
         return;
       }
     }

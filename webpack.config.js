@@ -7,7 +7,7 @@ module.exports = {
   experiments: {
     asyncWebAssembly: true,
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
