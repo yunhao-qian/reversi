@@ -1,4 +1,5 @@
 import './style.css';
+const rust = import('../reversi-agent/pkg');
 
 const startButton = document.querySelector('#start-button') as HTMLButtonElement;
 const endButton = document.querySelector('#end-button') as HTMLButtonElement;
@@ -353,8 +354,76 @@ function humanPlayerPlay(
   });
 }
 
+async function cpuPlayerPlay(
+  { player, chessboardData, legalMoves }: GameState,
+  maxDepth: number,
+  useCoinParity: boolean,
+  useActualMobility: boolean,
+  usePotentialMobility: boolean,
+  useCornerScore: boolean,
+  useStabilityScore: boolean,
+): Promise<[number, number]> {
+  const flatChessboard = new Int8Array(64);
+  for (let i = 0, row = 0; row < 8; ++row) {
+    for (let col = 0; col < 8; ++col, ++i) {
+      flatChessboard[i] = chessboardData[row][col];
+    }
+  }
+  const flatMove = (await rust).play(
+    player,
+    flatChessboard,
+    maxDepth,
+    useCoinParity,
+    useActualMobility,
+    usePotentialMobility,
+    useCornerScore,
+    useStabilityScore,
+  );
+  const moveCol = flatMove % 8, moveRow = Math.round((flatMove - moveCol) / 8);
+  return [moveRow, moveCol];
+}
+
 function createPlayer(option: string): Player {
   switch (option) {
+    case 'cpu-easy':
+      return {
+        undoable: false,
+        play: state => cpuPlayerPlay(
+          state,
+          4,     // maxDepth
+          true,  // useCoinParity
+          false, // useActualMobility
+          false, // usePotentialMobility
+          false, // useCornerScore
+          true,  // useStabilityScore
+        ),
+      };
+    case 'cpu-normal':
+      return {
+        undoable: false,
+        play: state => cpuPlayerPlay(
+          state,
+          6,     // maxDepth
+          true,  // useCoinParity
+          false, // useActualMobility
+          false, // usePotentialMobility
+          true,  // useCornerScore
+          true,  // useStabilityScore
+        ),
+      };
+    case 'cpu-hard':
+      return {
+        undoable: false,
+        play: state => cpuPlayerPlay(
+          state,
+          8,     // maxDepth
+          true,  // useCoinParity
+          true,  // useActualMobility
+          true,  // usePotentialMobility
+          true,  // useCornerScore
+          true,  // useStabilityScore
+        ),
+      };
     default:
       return {
         undoable: true,
