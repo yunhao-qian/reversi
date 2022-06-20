@@ -14,6 +14,6 @@ The heuristic functions are based on the paper *[An Analysis of Heuristics in Ot
 
 ## Screen Recording
 
-The following GIF is a screen recording of a CPU-versus-CPU game. As you can see from it, the response time of CPU players is barely noticeable.
+The following GIF is a screen recording of a CPU-versus-CPU game. As you can see, the response time of CPU players is barely noticeable.
 
 ![CPU-versus-CPU game](images/cpu-vs-cpu.gif)

@@ -30,8 +30,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Reversi',
       template: path.resolve(__dirname, 'src/index.html'),
+      favicon: path.resolve(__dirname, 'src/favicon.ico'),
     }),
     new WasmPackPlugin({
       crateDirectory: path.resolve(__dirname, 'reversi-agent'),

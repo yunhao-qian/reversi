@@ -1,7 +1,7 @@
 {
   "name": "reversi",
   "version": "1.0.0",
-  "description": "Play reversi against another human or a CPU player",
+  "description": "Play Reversi against another human or a game-playing agent",
   "scripts": {
     "build": "webpack",
     "serve": "webpack-dev-server"

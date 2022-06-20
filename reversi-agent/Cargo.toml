@@ -3,6 +3,9 @@ name = "reversi-agent"
 version = "1.0.0"
 authors = ["Yunhao Qian"]
 edition = "2021"
+description = "Game-playing agent of Reversi using the minimax algorithm"
+repository = "github.com/yunhao-qian/reversi"
+license = "MIT"
 
 [lib]
 crate-type = ["cdylib"]
