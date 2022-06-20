@@ -12,7 +12,7 @@ CPU players are driven by the minimax algorithm with alpha-beta pruning. By chan
 
 ## Project Structure
 
-This project is made up of two main components:
+This project is made up of two parts:
 
 1. A Cargo project containing a Rust implementation of the game-playing agent. It lies in the `reversi-agent` folder.
 
@@ -28,11 +28,11 @@ This project is made up of two main components:
    * `src/main.ts`: Logic of the user interface and the human player.
    * `src/style.css`: Stylesheet of the chessboard, discs, and controls.
 
-   To compile this node project, execute `npm run build` under the project's root directory. Output files will be under the `dist` directory, which constitute a webpage that is ready to be hosted by a server. Note that simply clicking-open the `dist/index.html` file will not work because of the browser's CORS restriction on WebAssembly files. An easy way to override this restriction is to host the webpage files on a local server by running `npm run serve` under the project's root directory. Users will then be able to visit the webpage at a localhost address.
+   To compile this Node project, execute `npm run build` under the project's root directory. Output files will be under the `dist` directory, which constitute a webpage that is ready to be hosted by a server. Note that simply clicking-open the `dist/index.html` file will not work because of the browser's CORS restriction on WebAssembly files. An easy way to override this restriction is to host the webpage files on a local server by running `npm run serve` under the project's root directory. Users will then be able to visit the webpage at a localhost address.
 
 ## Acknowledgement
 
-The heuristic functions are based on the paper *[An Analysis of Heuristics in Othello](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf)*.
+Heuristic functions used by the minimax algorithm are based on the paper *[An Analysis of Heuristics in Othello](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf)*.
 
 ## Screen Recording
 
